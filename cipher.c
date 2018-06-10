@@ -4,7 +4,7 @@
 // Prepares string for cipher
 char* prepString(char *str, int targetLength) {
     // Allocate memory for cleaned string
-    char *stripStr = calloc(targetLength, sizeof(char)); //FREEME
+    char *stripStr = calloc(targetLength, sizeof(char));
     int stripIndex = 0;
     char c;
     // Copy only letters from string into new string
@@ -67,11 +67,13 @@ char* cwRoute(char *str, int cols, int rows) {
 
 void route(char *str, int cols, int rows) { // TODO: cw vs ccw
     char *text = cwRoute(str, cols, rows);
-    printf("%.*s", cols * rows, text);
+    printf("%.*s\n", cols * rows, text);
     free(text);
 }
 
 void main() {
     route("We are discovered, flee at once", 9, 3);
+    route("For lunch let's have peanut-butter and bologna sandwiches", 4, 12);
+    route("I've even witnessed a grown man satisfy a camel", 9, 5);
 }
 
